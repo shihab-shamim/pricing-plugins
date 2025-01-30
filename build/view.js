@@ -435,9 +435,21 @@ const Cards = ({
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      alignItems: "space-between"
+      height: "100%",
+      border: "1px solid red",
+      padding: "10px",
+      gap: "10px"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", null, isShow && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      border: "1px solid red",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      flexGrow: 1,
+      padding: "10px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", null, isShow && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
     className: "plan-title"
   }, card?.title), isShow || (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     placeholder: "title...",
@@ -449,7 +461,6 @@ const Cards = ({
           title: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(card?.title, value)
         } : card)
       });
-      //    setAttributes({ cards: cards.map((card, i) => i === index ? { ...card, title: value } : card) });
     },
     className: "plan-title",
     value: card?.title
@@ -489,20 +500,33 @@ const Cards = ({
     value: card?.type
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     style: {
+      display: "flex",
+      flexDirection: "column",
       minHeight: "200px",
-      height: "auto",
-      alignItems: "center",
+      alignItems: "flex-start",
+      // Ensures that the list items stay aligned properly
       gap: "5px",
       flexGrow: 1
     },
     className: "plan-features"
   }, isShow && card?.features.map((feature, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-    key: index
+    key: index,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "5px",
+      width: "100%" // Ensure the list items take full width to avoid overflow
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "ion-checkmark"
   }), " ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: index,
-    className: "feature-item"
+    key: i,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "5px",
+      width: "100%" // Ensures the feature div takes the full width inside the list
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "ion-checkmark"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
@@ -519,7 +543,15 @@ const Cards = ({
         cards: newCards
       });
     }
-  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, card?.buttonText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      border: "1px solid red",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "10px"
+    }
+  }, card?.buttonText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "plan-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "select-plan"
