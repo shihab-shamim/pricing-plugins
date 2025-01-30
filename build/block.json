@@ -1,0 +1,115 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "b-blocks/enque-test",
+  "version": "1.0.0",
+  "title": "enqueue test",
+  "category": "widgets",
+  "description": "Short description of the Test Purpose",
+  "keywords": [
+    "enque-test"
+  ],
+  "textdomain": "b-blocks",
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Starter",
+          "price": "$19",
+          "type": "/month",
+          "buttonText": "Select Plan",
+          "features": [
+            "5GB Linux Web Space",
+            "5 MySQL Databases",
+            "Unlimited Email",
+            "250Gb mo Transfer",
+            "24/7 Tech Support",
+            "Daily Backups"
+          ]
+        },
+        {
+          "title": "Basic",
+          "price": "$29",
+          "type": "/month",
+          "buttonText": "Select Plan",
+          "features": [
+            "10GB Linux Web Space",
+            "10 MySQL Databases",
+            "Unlimited Email",
+            "500Gb mo Transfer",
+            "24/7 Tech Support",
+            "Daily Backups"
+          ]
+        },
+        {
+          "title": "Profess",
+          "price": "$49",
+          "type": "/month",
+          "buttonText": "Select Plan",
+          "features": [
+            "25GB Linux Web Space",
+            "25 MySQL Databases",
+            "Unlimited Email",
+            "2000Gb mo Transfer",
+            "24/7 Tech Support",
+            "Daily Backups"
+          ],
+          "featured": true
+        },
+        {
+          "title": "Ultra",
+          "price": "$99",
+          "type": "/month",
+          "buttonText": "Select Plan",
+          "features": [
+            "100GB Linux Web Space",
+            "Unlimited MySQL Databases",
+            "Unlimited Email",
+            "10000Gb mo Transfer",
+            "24/7 Tech Support",
+            "Daily Backups"
+          ]
+        }
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "default": {
+        "desktop": 4,
+        "tablet": 2,
+        "mobile": 1
+      }
+    },
+    "gaps": {
+      "type": "string",
+      "default": "0px"
+    },
+    "CardsContainerStyle": {
+      "type": "object",
+      "default": {
+        "width": "100%",
+        "height": "100%"
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
