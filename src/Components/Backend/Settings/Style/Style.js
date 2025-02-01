@@ -1,15 +1,15 @@
 import { __ } from "@wordpress/i18n";
 import {
   PanelBody,
-  __experimentalUnitControl as UnitControl ,__experimentalBorderBoxControl  as BorderBoxControl 
+  __experimentalUnitControl as UnitControl ,__experimentalBorderBoxControl  as BorderBoxControl, 
+
 } from "@wordpress/components";
 import { Flex ,ButtonGroup,Button} from "@wordpress/components";
-import {  ColorsControl, Label, Typography } from "../../../../../../bpl-tools/Components";
+import {  Background, BoxControl, ColorControl, ColorsControl, Label, Typography } from "../../../../../../bpl-tools/Components";
 
 const Style = ({ attributes, setAttributes }) => {
-  const { CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo} = attributes;
-
-
+  const { CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,cardsFather} = attributes;
+  console.log(cardsFather);
 const handleAlignment =(value)=>{
 
   setAttributes({titleAlign:value})
@@ -24,7 +24,7 @@ const handleAlignmentp =(value)=>{
       <PanelBody
       
         className="bPlPanelBody"
-        title={__("Cards Container style", "b-blocks")}
+        title={__("Cards Container", "b-blocks")}
         initialOpen={false}
       >
        <Flex gap='15px'>
@@ -43,6 +43,17 @@ const handleAlignmentp =(value)=>{
         }}
         />
        </Flex>
+
+       <BorderBoxControl
+       label="Border "
+       value={cardBorder}
+       onChange={(value)=>{
+        setAttributes({cardBorder:value})}}
+       />
+
+      <Background value={cardsFather} onChange={(value)=>{
+       setAttributes({cardsFather:value})
+      }} />
         
 
       </PanelBody>
@@ -118,6 +129,20 @@ const handleAlignmentp =(value)=>{
            value={featureTypo}
           onChange={(value)=>setAttributes({featureTypo:value})}/>
 
+          <ColorControl
+          label="Icon Color"
+          value={iconColor} onChange={(value)=>{
+            setAttributes({iconColor:value})
+          }} />
+
+          <UnitControl
+          label="Icon Size"
+          value={iconSize}
+          onChange={(value)=>{
+            setAttributes({iconSize:value})
+          }} />
+          
+
       </PanelBody>
 
 
@@ -146,6 +171,17 @@ const handleAlignmentp =(value)=>{
            value={ButtonTypo}
           onChange={(value)=>setAttributes({ButtonTypo:value})}/>
 
+          <BoxControl
+          label="paddings"
+           values={buttonPadding} onChange={(value)=>{
+            setAttributes({buttonPadding:value});
+          }} />
+
+          <BoxControl
+          label="Border Radius"
+           values={buttonRadius} onChange={(value)=>{
+            setAttributes({buttonRadius:value});
+          }} />
 
       </PanelBody>
     </>

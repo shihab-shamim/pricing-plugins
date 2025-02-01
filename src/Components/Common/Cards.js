@@ -3,23 +3,9 @@ import { updateData } from '../../utils/functions';
 
 const Cards = ({cards,isShow,setAttributes,attributes}) => {
     return (
-        <div className="snip1404">
-  {/* <div className="plan">
-    <header>
-      <h4 className="plan-title">
-        {title}
-      </h4>
-      <div className="plan-cost"><span className="plan-price">{price}</span><span className="plan-type">{type}</span></div>
-    </header>
-    <ul className="plan-features">
-      <li><i className="ion-checkmark" /> 5GB Linux Web Space</li>
-      {
-        features.map((feature,index)=><li key={index}><i className="ion-checkmark" /> {feature}</li>)
-      }
-      
-    </ul>
-    <div className="plan-select"><a href="">Select Plan</a></div>
-  </div> */}
+      <div className='fatherofcards'>
+
+<div className="snip1404" >
   {
     cards.map((card,index)=> <div key={index} className="plan">
   <div style={{
@@ -164,6 +150,7 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
 
  
 </div>
+      </div>
     );
 };
 

@@ -192,17 +192,68 @@
       "type": "object",
       "default": {
         "fontFamily": "",
-        "fontWeight": "",
+        "fontWeight": "0.75em",
         "fontSize": {
           "desktop": "",
           "tablet": "",
           "mobile": ""
         },
         "fontStyle": "normal",
-        "textTransform": "",
+        "textTransform": "uppercase",
         "textDecoration": "none",
         "lineHeight": "",
-        "letterSpace": ""
+        "letterSpace": "4px"
+      }
+    },
+    "buttonPadding": {
+      "type": "object",
+      "default": {
+        "top": "12px",
+        "bottom": "12px",
+        "left": "20px",
+        "right": "20px"
+      }
+    },
+    "buttonRadius": {
+      "type": "object",
+      "default": {
+        "top": "30px",
+        "bottom": "30px",
+        "left": "30px",
+        "right": "30px"
+      }
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "rgba(0, 0, 0, 0.5)"
+    },
+    "iconSize": {
+      "type": "string",
+      "default": "16px"
+    },
+    "cardBorder": {
+      "type": "object",
+      "default": {
+        "width": "3px",
+        "style": "solid",
+        "color": "#2F1823"
+      }
+    },
+    "cardsFather": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "#212121",
+        "gradient": "",
+        "image": {
+          "url": "",
+          "alt": ""
+        },
+        "position": "center center",
+        "attachment": "initial",
+        "repeat": "no-repeat",
+        "size": "cover",
+        "overlayColor": ""
       }
     }
   },

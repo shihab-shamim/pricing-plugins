@@ -426,6 +426,8 @@ const Cards = ({
   attributes
 }) => {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "fatherofcards"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "snip1404"
   }, cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: index,
@@ -551,7 +553,7 @@ const Cards = ({
     className: "plan-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "select-plan"
-  }, card?.buttonText)))))));
+  }, card?.buttonText))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cards);
 
@@ -591,11 +593,19 @@ const Style = ({
     featuresColor,
     featureTypo,
     buttonColor,
-    ButtonTypo
+    ButtonTypo,
+    buttonPadding,
+    buttonRadius,
+    iconColor,
+    iconSize,
+    cardBorder,
+    alignment,
+    cardsFather
   } = attributes;
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .bBlocksTestPurpose`;
-  const container = `${mainSl} .snip1404`;
+  const fatherofcards = `${mainSl} .fatherofcards`;
+  const container = `${fatherofcards} .snip1404`;
   const plan = `${container} .plan`;
   const planTitlt = `${container} .plan-title`;
   const planCost = `${container} .plan-cost`;
@@ -622,11 +632,19 @@ const Style = ({
 		${blockSl} p {
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(colors)}
 		  }
+			${fatherofcards}{
+			display: flex;
+			justify-content: ${alignment};
+			padding:20px;
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(cardsFather)}
+			
+			}
 			${plan}{
 			max-width: 350px;
 			min-height: 400px;
 			height: auto;
-			marginTop:${gaps}
+			marginTop:${gaps}; 
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderBoxCSS)(cardBorder)}
 			}
 		  
 		  ${container} {
@@ -634,7 +652,8 @@ const Style = ({
 			display: grid;
 			width: ${CardsContainerStyle?.width};
 			grid-template-columns: repeat(${layout?.desktop || 3}, 1fr);
-		  gap: ${gaps};
+		    gap: ${gaps};
+			
 		  }
 		  ${planTitlt}{
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(titleColor)}
@@ -663,8 +682,21 @@ const Style = ({
 		   }
 		  ${button}{
 		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(buttonColor)}
+		 padding: ${buttonPadding?.top} ${buttonPadding?.right} ${buttonPadding?.bottom} ${buttonPadding?.left};
+		border-top-left-radius:${buttonRadius?.top};
+		border-top-right-radius: ${buttonRadius?.right};
+		border-bottom-left-radius:${buttonRadius?.bottom};
+		border-bottom-right-radius: ${buttonRadius?.left};
+
+		
 		  
 		  }
+		${planFeatures} i{
+		color: ${iconColor};
+		font-size: ${iconSize};
+		
+		}
+
 
 
 

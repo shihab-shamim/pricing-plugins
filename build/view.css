@@ -30,7 +30,6 @@
   position: relative;
   float: left;
   overflow: hidden;
-  border: 3px solid #442232;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan:hover i,
@@ -95,12 +94,7 @@
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan-select .select-plan {
   text-decoration: none;
-  padding: 12px 20px;
-  font-size: 0.75em;
   font-weight: 600;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
   display: inline-block;
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan-select .select-plan:hover {
@@ -117,7 +111,7 @@
 .wp-block-b-blocks-enque-test .snip1404 .plan .plan-select {
   padding: 30px 20px;
 }
-.wp-block-b-blocks-enque-test .feature-item i {
+.wp-block-b-blocks-enque-test .feature-item i, .wp-block-b-blocks-enque-test .feature {
   padding: 8px 5%;
 }
 @media only screen and (max-width: 767px) {

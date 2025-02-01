@@ -1,11 +1,12 @@
-import { getColorsCSS,getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
+import { getColorsCSS,getTypoCSS,getBorderBoxCSS,getBackgroundCSS} from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id,device }) => {
-	const { colors,layout,gaps,CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor ,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo} = attributes;
+	const { colors,layout,gaps,CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor ,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,alignment,cardsFather} = attributes;
 
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .bBlocksTestPurpose`;
-	const container=`${mainSl} .snip1404`;
+	const fatherofcards = `${mainSl} .fatherofcards`;
+	const container=`${fatherofcards} .snip1404`;
 	const plan=`${container} .plan`;
 	const planTitlt=`${container} .plan-title`;
 	const planCost=`${container} .plan-cost`;
@@ -13,7 +14,8 @@ const Style = ({ attributes, id,device }) => {
 	const feature=`${planFeatures} .feature`;
 	const selectPanel=`${container} .panelSelect`;
 	const selectPlan=`${selectPanel} .plan-select`
-	const button=`${selectPanel} .select-plan`
+	const button=`${selectPanel} .select-plan`;
+	
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
@@ -32,11 +34,19 @@ const Style = ({ attributes, id,device }) => {
 		${blockSl} p {
 			${getColorsCSS(colors)}
 		  }
+			${fatherofcards}{
+			display: flex;
+			justify-content: ${alignment};
+			padding:20px;
+			${getBackgroundCSS(cardsFather)}
+			
+			}
 			${plan}{
 			max-width: 350px;
 			min-height: 400px;
 			height: auto;
-			marginTop:${gaps}
+			marginTop:${gaps}; 
+			${getBorderBoxCSS(cardBorder)}
 			}
 		  
 		  ${container} {
@@ -44,7 +54,8 @@ const Style = ({ attributes, id,device }) => {
 			display: grid;
 			width: ${CardsContainerStyle?.width};
 			grid-template-columns: repeat(${layout?.desktop || 3}, 1fr);
-		  gap: ${gaps};
+		    gap: ${gaps};
+			
 		  }
 		  ${planTitlt}{
 		  ${getColorsCSS(titleColor)}
@@ -73,8 +84,21 @@ const Style = ({ attributes, id,device }) => {
 		   }
 		  ${button}{
 		   ${getColorsCSS(buttonColor)}
+		 padding: ${buttonPadding?.top} ${buttonPadding?.right} ${buttonPadding?.bottom} ${buttonPadding?.left};
+		border-top-left-radius:${buttonRadius?.top};
+		border-top-right-radius: ${buttonRadius?.right};
+		border-bottom-left-radius:${buttonRadius?.bottom};
+		border-bottom-right-radius: ${buttonRadius?.left};
+
+		
 		  
 		  }
+		${planFeatures} i{
+		color: ${iconColor};
+		font-size: ${iconSize};
+		
+		}
+
 
 
 
