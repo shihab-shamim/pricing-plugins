@@ -13,6 +13,7 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
   flexDirection: "column", 
   justifyContent: "space-between", 
   height: "100%", 
+  
 }}>
   <div style={{
     display: "flex", 

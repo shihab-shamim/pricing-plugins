@@ -600,7 +600,8 @@ const Style = ({
     iconSize,
     cardBorder,
     alignment,
-    cardsFather
+    cardsFather,
+    cardShadow
   } = attributes;
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .bBlocksTestPurpose`;
@@ -637,6 +638,8 @@ const Style = ({
 			justify-content: ${alignment};
 			padding:20px;
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(cardsFather)}
+			width:100%;
+			
 			
 			}
 			${plan}{
@@ -645,6 +648,7 @@ const Style = ({
 			height: auto;
 			marginTop:${gaps}; 
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderBoxCSS)(cardBorder)}
+			box-shadow:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)}
 			}
 		  
 		  ${container} {

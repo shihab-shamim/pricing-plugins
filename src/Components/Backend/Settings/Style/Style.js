@@ -5,10 +5,10 @@ import {
 
 } from "@wordpress/components";
 import { Flex ,ButtonGroup,Button} from "@wordpress/components";
-import {  Background, BoxControl, ColorControl, ColorsControl, Label, Typography } from "../../../../../../bpl-tools/Components";
+import {  Background, BoxControl, ColorControl, ColorsControl, Label, ShadowControl, Typography } from "../../../../../../bpl-tools/Components";
 
 const Style = ({ attributes, setAttributes }) => {
-  const { CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,cardsFather} = attributes;
+  const { CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,cardsFather,cardShadow} = attributes;
   console.log(cardsFather);
 const handleAlignment =(value)=>{
 
@@ -51,9 +51,18 @@ const handleAlignmentp =(value)=>{
         setAttributes({cardBorder:value})}}
        />
 
-      <Background value={cardsFather} onChange={(value)=>{
+      <Background
+       label="Background Color"
+       value={cardsFather} onChange={(value)=>{
        setAttributes({cardsFather:value})
       }} />
+
+      <ShadowControl
+      label="Card Shadow"
+      value={cardShadow} 
+       onChange={(value)=>{
+        setAttributes({cardShadow:value})
+        }} />
         
 
       </PanelBody>
@@ -153,11 +162,7 @@ const handleAlignmentp =(value)=>{
       initialOpen={false}
       >
 
-        {/* <BorderBoxControl
-            
-            label={ __( 'Borders' ) }
-            onChange={ 'onChange' }
-        /> */}
+       
 
 
                 <ColorsControl value={buttonColor} onChange={(value)=>{

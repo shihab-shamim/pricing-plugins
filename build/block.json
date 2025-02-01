@@ -3,11 +3,11 @@
   "apiVersion": 3,
   "name": "b-blocks/enque-test",
   "version": "1.0.0",
-  "title": "enqueue test",
+  "title": "price card",
   "category": "widgets",
   "description": "Short description of the Test Purpose",
   "keywords": [
-    "enque-test"
+    "price card"
   ],
   "textdomain": "b-blocks",
   "attributes": {
@@ -47,7 +47,7 @@
           ]
         },
         {
-          "title": "Profess",
+          "title": "Specialist",
           "price": "$49",
           "type": "/month",
           "buttonText": "Select Plan",
@@ -192,11 +192,11 @@
       "type": "object",
       "default": {
         "fontFamily": "",
-        "fontWeight": "0.75em",
+        "fontWeight": "600",
         "fontSize": {
-          "desktop": "",
-          "tablet": "",
-          "mobile": ""
+          "desktop": "13px",
+          "tablet": "13px",
+          "mobile": "13px"
         },
         "fontStyle": "normal",
         "textTransform": "uppercase",
@@ -236,7 +236,7 @@
       "default": {
         "width": "3px",
         "style": "solid",
-        "color": "#2F1823"
+        "color": "#442232"
       }
     },
     "cardsFather": {
@@ -255,6 +255,19 @@
         "size": "cover",
         "overlayColor": ""
       }
+    },
+    "cardShadow": {
+      "type": "array",
+      "default": [
+        {
+          "hOffset": "0px",
+          "vOffset": "0px",
+          "blur": "0px",
+          "spreed": "5px",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "isInset": false
+        }
+      ]
     }
   },
   "supports": {

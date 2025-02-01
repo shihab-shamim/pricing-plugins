@@ -1,7 +1,7 @@
-import { getColorsCSS,getTypoCSS,getBorderBoxCSS,getBackgroundCSS} from '../../../../bpl-tools/utils/getCSS';
+import { getColorsCSS,getTypoCSS,getBorderBoxCSS,getBackgroundCSS,getMultiShadowCSS} from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id,device }) => {
-	const { colors,layout,gaps,CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor ,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,alignment,cardsFather} = attributes;
+	const { colors,layout,gaps,CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor ,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,alignment,cardsFather,cardShadow} = attributes;
 
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .bBlocksTestPurpose`;
@@ -39,6 +39,8 @@ const Style = ({ attributes, id,device }) => {
 			justify-content: ${alignment};
 			padding:20px;
 			${getBackgroundCSS(cardsFather)}
+			width:100%;
+			
 			
 			}
 			${plan}{
@@ -47,6 +49,7 @@ const Style = ({ attributes, id,device }) => {
 			height: auto;
 			marginTop:${gaps}; 
 			${getBorderBoxCSS(cardBorder)}
+			box-shadow:${getMultiShadowCSS(cardShadow)}
 			}
 		  
 		  ${container} {
