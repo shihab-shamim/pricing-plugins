@@ -27,7 +27,7 @@ const handleAlignmentp =(value)=>{
         title={__("Cards Container", "b-blocks")}
         initialOpen={false}
       >
-       <Flex gap='15px'>
+      
        <UnitControl
         label="width"
         value={CardsContainerStyle?.width}
@@ -42,7 +42,7 @@ const handleAlignmentp =(value)=>{
           setAttributes({CardsContainerStyle:{...CardsContainerStyle,height:value}})
         }}
         />
-       </Flex>
+     
 
        <BorderBoxControl
        label="Border "

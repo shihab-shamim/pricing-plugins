@@ -678,6 +678,7 @@ const Style = ({
 		   ${plan}{
 		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(featuresColor)}
 		   
+		   
 		   }
 		   ${selectPanel}{
 		   
@@ -713,7 +714,14 @@ const Style = ({
 			}
 		  }
 		  
-		  /* Mobile (Below 645px) */
+		  @media only screen and (min-width: 645px) and (max-width: 1024px) {
+			${container} {
+			  grid-template-columns: repeat(${layout?.tablet || 2}, 1fr);
+			   gap: ${gaps};
+			}
+		  }
+		  
+		
 		  @media only screen and (max-width: 645px) {
 			${container} {
 			  display: flex;
@@ -727,6 +735,7 @@ const Style = ({
 				}
 			}
 		  }
+			
 		  
 	`
     }

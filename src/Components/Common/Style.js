@@ -79,6 +79,7 @@ const Style = ({ attributes, id,device }) => {
 		   ${plan}{
 		   ${getColorsCSS(featuresColor)}
 		   
+		   
 		   }
 		   ${selectPanel}{
 		   
@@ -114,7 +115,14 @@ const Style = ({ attributes, id,device }) => {
 			}
 		  }
 		  
-		  /* Mobile (Below 645px) */
+		  @media only screen and (min-width: 645px) and (max-width: 1024px) {
+			${container} {
+			  grid-template-columns: repeat(${layout?.tablet || 2}, 1fr);
+			   gap: ${gaps};
+			}
+		  }
+		  
+		
 		  @media only screen and (max-width: 645px) {
 			${container} {
 			  display: flex;
@@ -128,6 +136,7 @@ const Style = ({ attributes, id,device }) => {
 				}
 			}
 		  }
+			
 		  
 	`}} />;
 }

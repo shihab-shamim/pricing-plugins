@@ -253,9 +253,12 @@ Copy
       <PanelBody className='bPlPanelBody' title={__('Cards Layouts', 'b-blocks')} initialOpen={false}>
 
 
+<Flex justify='space-between'>
+<Label>Columns</Label>
 
-
-      <Device/>       
+<Device/>  
+  
+  </Flex>      
         <NumberControl
 	onChange={ e =>{
     setAttributes({ layout: {...layout, [device]: e } });

@@ -80,9 +80,9 @@
   "layout": {
 	"type":"object",
 	"default":{
-		"desktop":4,
+		"desktop":2,
 		"tablet":2,
-        "mobile":1
+     "mobile":1
     
 
 	}
