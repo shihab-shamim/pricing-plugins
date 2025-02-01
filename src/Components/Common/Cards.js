@@ -7,12 +7,17 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
 
 <div className="snip1404" >
   {
-    cards.map((card,index)=> <div key={index} className="plan">
+    cards.map((card,index)=> <div
+    // style={{ borderRadius:"100px",
+    //   border:"1px solid red"}}
+    
+    key={index} className="plan">
   <div style={{
   display: "flex", 
   flexDirection: "column", 
   justifyContent: "space-between", 
   height: "100%", 
+  
   
 }}>
   <div style={{
@@ -20,6 +25,7 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
     flexDirection: "column", 
     justifyContent: "space-between", 
     flexGrow: 1,
+   
 
   }}>
     <header>

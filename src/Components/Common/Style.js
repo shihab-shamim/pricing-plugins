@@ -1,7 +1,7 @@
 import { getColorsCSS,getTypoCSS,getBorderBoxCSS,getBackgroundCSS,getMultiShadowCSS} from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id,device }) => {
-	const { colors,layout,gaps,CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor ,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,alignment,cardsFather,cardShadow} = attributes;
+	const { colors,layout,gaps,CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor ,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,alignment,cardsFather,cardShadow,cardRadius} = attributes;
 
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .bBlocksTestPurpose`;
@@ -49,7 +49,11 @@ const Style = ({ attributes, id,device }) => {
 			height: auto;
 			marginTop:${gaps}; 
 			${getBorderBoxCSS(cardBorder)}
-			box-shadow:${getMultiShadowCSS(cardShadow)}
+			box-shadow:${getMultiShadowCSS(cardShadow)};
+			border-top-left-radius:${cardRadius?.top};
+		border-top-right-radius: ${cardRadius?.right};
+		border-bottom-left-radius:${cardRadius?.bottom};
+		border-bottom-right-radius: ${cardRadius?.left};
 			}
 		  
 		  ${container} {

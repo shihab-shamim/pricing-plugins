@@ -430,6 +430,9 @@ const Cards = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "snip1404"
   }, cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    // style={{ borderRadius:"100px",
+    //   border:"1px solid red"}}
+
     key: index,
     className: "plan"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -601,7 +604,8 @@ const Style = ({
     cardBorder,
     alignment,
     cardsFather,
-    cardShadow
+    cardShadow,
+    cardRadius
   } = attributes;
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .bBlocksTestPurpose`;
@@ -648,7 +652,11 @@ const Style = ({
 			height: auto;
 			marginTop:${gaps}; 
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderBoxCSS)(cardBorder)}
-			box-shadow:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)}
+			box-shadow:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)};
+			border-top-left-radius:${cardRadius?.top};
+		border-top-right-radius: ${cardRadius?.right};
+		border-bottom-left-radius:${cardRadius?.bottom};
+		border-bottom-right-radius: ${cardRadius?.left};
 			}
 		  
 		  ${container} {

@@ -8,7 +8,7 @@ import { Flex ,ButtonGroup,Button} from "@wordpress/components";
 import {  Background, BoxControl, ColorControl, ColorsControl, Label, ShadowControl, Typography } from "../../../../../../bpl-tools/Components";
 
 const Style = ({ attributes, setAttributes }) => {
-  const { CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,cardsFather,cardShadow} = attributes;
+  const { CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,cardsFather,cardShadow,cardRadius} = attributes;
   console.log(cardsFather);
 const handleAlignment =(value)=>{
 
@@ -64,6 +64,11 @@ const handleAlignmentp =(value)=>{
         setAttributes({cardShadow:value})
         }} />
         
+        <BoxControl
+          label="Border Radius"
+           values={cardRadius} onChange={(value)=>{
+            setAttributes({cardRadius:value});
+          }} />
 
       </PanelBody>
 

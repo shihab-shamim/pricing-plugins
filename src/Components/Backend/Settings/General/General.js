@@ -253,7 +253,7 @@ Copy
       <PanelBody className='bPlPanelBody' title={__('Cards Layouts', 'b-blocks')} initialOpen={false}>
 
 
-<Flex justify='space-between'>
+<Flex justify='space-between' alignItems='center'>
 <Label>Columns</Label>
 
 <Device/>  
