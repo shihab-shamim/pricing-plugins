@@ -435,19 +435,14 @@ const Cards = ({
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      height: "100%",
-      border: "1px solid red",
-      padding: "10px",
-      gap: "10px"
+      height: "100%"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
-      border: "1px solid red",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      flexGrow: 1,
-      padding: "10px"
+      flexGrow: 1
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", null, isShow && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
     className: "plan-title"
@@ -504,18 +499,19 @@ const Cards = ({
       flexDirection: "column",
       minHeight: "200px",
       alignItems: "flex-start",
-      // Ensures that the list items stay aligned properly
       gap: "5px",
-      flexGrow: 1
+      flexGrow: 1,
+      paddingLeft: "10px"
     },
     className: "plan-features"
   }, isShow && card?.features.map((feature, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    className: "feature",
     key: index,
     style: {
       display: "flex",
       alignItems: "center",
       gap: "5px",
-      width: "100%" // Ensure the list items take full width to avoid overflow
+      width: "100%"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "ion-checkmark"
@@ -525,11 +521,12 @@ const Cards = ({
       display: "flex",
       alignItems: "center",
       gap: "5px",
-      width: "100%" // Ensures the feature div takes the full width inside the list
+      width: "100%"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "ion-checkmark"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "feature",
     tagName: "span",
     value: feature,
     placeholder: "feature...",
@@ -544,12 +541,11 @@ const Cards = ({
       });
     }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "panelSelect",
     style: {
-      border: "1px solid red",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
-      padding: "10px"
+      alignItems: "center"
     }
   }, card?.buttonText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "plan-select"
@@ -585,15 +581,43 @@ const Style = ({
     colors,
     layout,
     gaps,
-    CardsContainerStyle
+    CardsContainerStyle,
+    titleColor,
+    titleAlign,
+    titleTypo,
+    priceColor,
+    priceAlign,
+    priceTypo,
+    featuresColor,
+    featureTypo,
+    buttonColor,
+    ButtonTypo
   } = attributes;
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .bBlocksTestPurpose`;
   const container = `${mainSl} .snip1404`;
   const plan = `${container} .plan`;
+  const planTitlt = `${container} .plan-title`;
+  const planCost = `${container} .plan-cost`;
+  const planFeatures = `${container} .plan-features`;
+  const feature = `${planFeatures} .feature`;
+  const selectPanel = `${container} .panelSelect`;
+  const selectPlan = `${selectPanel} .plan-select`;
+  const button = `${selectPanel} .select-plan`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', titleTypo)?.googleFontLink}
+       ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(planTitlt, titleTypo)?.styles}
+
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', priceTypo)?.googleFontLink}
+       ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(planCost, priceTypo)?.styles}
+
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', featureTypo)?.googleFontLink}
+       ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(feature, featureTypo)?.styles}
+
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', ButtonTypo)?.googleFontLink}
+       ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(button, ButtonTypo)?.styles}
 		
 		${blockSl} p {
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(colors)}
@@ -612,8 +636,40 @@ const Style = ({
 			grid-template-columns: repeat(${layout?.desktop || 3}, 1fr);
 		  gap: ${gaps};
 		  }
+		  ${planTitlt}{
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(titleColor)}
+		  text-align:${titleAlign};
 		  
-		  /* Tablet (645px - 1024px) */
+		  }
+		  ${planTitlt}:after{
+		  border-style: solid;
+         border-width: 40px 300px 0 0;
+          border-color: ${titleColor.bgType === "solid" ? titleColor.bg : titleColor.gradient} transparent transparent;
+		  
+		  }
+		  
+		  ${planCost}{
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(priceColor)}
+		   text-align:${priceAlign};
+          }
+		   ${plan}{
+		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(featuresColor)}
+		   
+		   }
+		   ${selectPanel}{
+		   
+		  border-top: 1px solid rgba(0, 0, 0, 0.2);
+		   
+		   }
+		  ${button}{
+		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(buttonColor)}
+		  
+		  }
+
+
+
+
+
 		  @media only screen and (min-width: 645px) and (max-width: 1024px) {
 			${container} {
 			  grid-template-columns: repeat(${layout?.tablet || 2}, 1fr);

@@ -97,6 +97,117 @@
 		"width":"100%",
 		"height":"100%"
 	}
+  },
+  "titleColor":{
+    "type":"object",
+    "default":{
+      "color": "#ffffff",
+      "bgType": "solid",
+      "bg": "rgba(0, 0, 0, 0.5)",
+      "gradient": "linear-gradient(135deg, #4527a4, #8344c5)"
+    }
+  },
+  "titleAlign":{
+    "type":"string",
+    "default":"left"
+  },
+  "titleTypo":{
+    "type":"object",
+    "default":{
+      "fontFamily": "Arial",
+      "fontWeight": 400,
+      "fontSize": {
+        "desktop": "3em",
+        "tablet": "2em",
+        "mobile": "1em"
+      },
+      "fontStyle": "normal",
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "lineHeight": "150%",
+      "letterSpace": "4px"
+    }
+  },
+  "priceColor":{
+    "type":"object",
+    "default":{
+      "color": "#ffffff",
+      "bgType": "solid",
+      "bg": "#5F3047"
+    }
+  },
+  
+  "priceAlign":{
+    "type":"string",
+    "default":"right"
+  },
+  "priceTypo":{
+    "type":"object",
+    "default":{
+      "fontFamily": "",
+      "fontWeight": 400,
+      "fontSize": {
+        "desktop": "3em",
+        "tablet": "2em",
+        "mobile": "1em"
+      },
+      "fontStyle": "normal",
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "lineHeight": "150%",
+      "letterSpace": "4px"
+    }
+  },
+  "featuresColor":{
+    "type":"object",
+    "default":{
+      "color": "#ffffff",
+      "bgType": "solid",
+      "bg": "#5f3047"
+    }
+  }
+  ,
+  "featureTypo":{
+    "type":"object",
+    "default":{
+      "fontFamily": "",
+      "fontWeight": "",
+      "fontSize": {
+        "desktop": "0.75em",
+        "tablet": "2em",
+        "mobile": "1em"
+      },
+      "fontStyle": "normal",
+      "textTransform": "",
+      "textDecoration": "none",
+      "lineHeight": "",
+      "letterSpace": ""
+    }
+  },
+  "buttonColor":{
+    "type":"object",
+    "default":{
+      "color": "#ffffff",
+      "bgType": "solid",
+      "bg": "#442232"
+    }
+  },
+  "ButtonTypo":{
+    "type":"object",
+    "default":{
+      "fontFamily": "",
+      "fontWeight": "",
+      "fontSize": {
+        "desktop": "",
+        "tablet": "",
+        "mobile": ""
+      },
+      "fontStyle": "normal",
+      "textTransform": "",
+      "textDecoration": "none",
+      "lineHeight": "",
+      "letterSpace": ""
+    }
   }
 	
 	},

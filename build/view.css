@@ -32,7 +32,6 @@
   overflow: hidden;
   border: 3px solid #442232;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #5f3047;
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan:hover i,
 .wp-block-b-blocks-enque-test .snip1404 .plan.hover i {
@@ -53,7 +52,6 @@
   color: #ffffff;
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan-title {
-  background-color: rgba(0, 0, 0, 0.5);
   position: relative;
   margin: 0;
   padding: 20px 20px 0;
@@ -67,13 +65,9 @@
   left: 0;
   width: 0;
   height: 0;
-  border-style: solid;
-  border-width: 40px 300px 0 0;
-  border-color: rgba(0, 0, 0, 0.5) transparent transparent;
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan-cost {
-  padding: 40px 20px 10px;
-  text-align: right;
+  padding: 50px 20px 10px;
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan-price {
   font-weight: 600;
@@ -97,13 +91,9 @@
   color: rgba(0, 0, 0, 0.5);
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan-select {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 20px;
   text-align: center;
 }
 .wp-block-b-blocks-enque-test .snip1404 .plan-select .select-plan {
-  background-color: #442232;
-  color: #ffffff;
   text-decoration: none;
   padding: 12px 20px;
   font-size: 0.75em;

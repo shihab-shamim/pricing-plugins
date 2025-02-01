@@ -27,17 +27,13 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
   flexDirection: "column", 
   justifyContent: "space-between", 
   height: "100%", 
-  border: "1px solid red", 
-  padding: "10px", 
-  gap: "10px"
 }}>
   <div style={{
-    border: "1px solid red", 
     display: "flex", 
     flexDirection: "column", 
     justifyContent: "space-between", 
     flexGrow: 1,
-    padding: "10px"
+
   }}>
     <header>
       {isShow && (
@@ -103,16 +99,18 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
       display: "flex", 
       flexDirection: "column", 
       minHeight: "200px", 
-      alignItems: "flex-start",  // Ensures that the list items stay aligned properly
+      alignItems: "flex-start", 
       gap: "5px", 
-      flexGrow: 1
+      flexGrow: 1,
+  paddingLeft:"10px"
+
     }} className="plan-features">
       {isShow && card?.features.map((feature, index) => (
-        <li key={index} style={{
+        <li className='feature' key={index} style={{
           display: "flex", 
           alignItems: "center", 
           gap: "5px",
-          width: "100%" // Ensure the list items take full width to avoid overflow
+          width: "100%" 
         }}>
           <i className="ion-checkmark" /> {feature}
         </li>
@@ -122,10 +120,11 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
           display: "flex", 
           alignItems: "center", 
           gap: "5px",
-          width: "100%" // Ensures the feature div takes the full width inside the list
+          width: "100%" 
         }}>
           <i className="ion-checkmark"></i>
           <RichText
+           className='feature'
             tagName="span"  
             value={feature}
             placeholder="feature..."
@@ -145,12 +144,14 @@ const Cards = ({cards,isShow,setAttributes,attributes}) => {
     </ul>
   </div>
 
-  <div style={{
-    border: "1px solid red", 
+  <div
+  className='panelSelect'
+   style={{
     display: "flex", 
     justifyContent: "center", 
     alignItems: "center", 
-    padding: "10px"
+   
+    
   }}>
     {card?.buttonText && <div className="plan-select"><a className='select-plan'>{card?.buttonText}</a></div>}
   </div>
