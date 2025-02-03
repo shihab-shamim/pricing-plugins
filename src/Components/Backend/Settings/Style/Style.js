@@ -1,198 +1,264 @@
 import { __ } from "@wordpress/i18n";
 import {
   PanelBody,
-  __experimentalUnitControl as UnitControl ,__experimentalBorderBoxControl  as BorderBoxControl, 
-
+  __experimentalUnitControl as UnitControl,
+  __experimentalBorderBoxControl as BorderBoxControl,
 } from "@wordpress/components";
-import { Flex ,ButtonGroup,Button} from "@wordpress/components";
-import {  Background, BoxControl, ColorControl, ColorsControl, Label, ShadowControl, Typography } from "../../../../../../bpl-tools/Components";
+import { Flex, ButtonGroup, Button } from "@wordpress/components";
+import {
+  Background,
+  BoxControl,
+  ColorControl,
+  ColorsControl,
+  IconLibrary,
+  Label,
+  ShadowControl,
+  Typography,
+} from "../../../../../../bpl-tools/Components";
 
 const Style = ({ attributes, setAttributes }) => {
-  const { CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,cardsFather,cardShadow,cardRadius} = attributes;
-  console.log(cardsFather);
-const handleAlignment =(value)=>{
+  const {
+    CardsContainerStyle,
+    titleColor,
+    titleAlign,
+    titleTypo,
+    priceColor,
+    priceAlign,
+    priceTypo,
+    featuresColor,
+    featureTypo,
+    buttonColor,
+    ButtonTypo,
+    buttonPadding,
+    buttonRadius,
+    iconColor,
+    iconSize,
+    cardBorder,
+    cardsFather,
+    cardShadow,
+    cardRadius,
+    icon,
+  } = attributes;
+  console.log(icon);
+  const handleAlignment = (value) => {
+    setAttributes({ titleAlign: value });
+  };
 
-  setAttributes({titleAlign:value})
-}
-
-const handleAlignmentp =(value)=>{
-
-  setAttributes({priceAlign:value})
-}
+  const handleAlignmentp = (value) => {
+    setAttributes({ priceAlign: value });
+  };
   return (
     <>
       <PanelBody
-      
         className="bPlPanelBody"
-        title={__("Cards Container", "b-blocks")}
+        title={__("Cards Style", "b-blocks")}
         initialOpen={false}
       >
-      
-       <UnitControl
-        label="width"
-        value={CardsContainerStyle?.width}
-        onChange={(value)=>{
-          setAttributes({CardsContainerStyle:{...CardsContainerStyle,width:value}})
-        }}
+        <UnitControl
+          label="width"
+          value={CardsContainerStyle?.width}
+          onChange={(value) => {
+            setAttributes({
+              CardsContainerStyle: { ...CardsContainerStyle, width: value },
+            });
+          }}
         />
-         <UnitControl
-        label="height"
-        value={CardsContainerStyle?.height}
-        onChange={(value)=>{
-          setAttributes({CardsContainerStyle:{...CardsContainerStyle,height:value}})
-        }}
+        <UnitControl
+          label="height"
+          value={CardsContainerStyle?.height}
+          onChange={(value) => {
+            setAttributes({
+              CardsContainerStyle: { ...CardsContainerStyle, height: value },
+            });
+          }}
         />
-     
 
-       <BorderBoxControl
-       label="Border "
-       value={cardBorder}
-       onChange={(value)=>{
-        setAttributes({cardBorder:value})}}
-       />
+        <BorderBoxControl
+          label="Border "
+          value={cardBorder}
+          onChange={(value) => {
+            setAttributes({ cardBorder: value });
+          }}
+        />
 
-      <Background
-       label="Background Color"
-       value={cardsFather} onChange={(value)=>{
-       setAttributes({cardsFather:value})
-      }} />
+        <Background
+          label="Background Color"
+          value={cardsFather}
+          onChange={(value) => {
+            setAttributes({ cardsFather: value });
+          }}
+        />
 
-      <ShadowControl
-      label="Card Shadow"
-      value={cardShadow} 
-       onChange={(value)=>{
-        setAttributes({cardShadow:value})
-        }} />
-        
+        <ShadowControl
+          label="Card Shadow"
+          value={cardShadow}
+          onChange={(value) => {
+            setAttributes({ cardShadow: value });
+          }}
+        />
+
         <BoxControl
           label="Border Radius"
-           values={cardRadius} onChange={(value)=>{
-            setAttributes({cardRadius:value});
-          }} />
-
+          values={cardRadius}
+          onChange={(value) => {
+            setAttributes({ cardRadius: value });
+          }}
+        />
       </PanelBody>
 
       <PanelBody
-      className="bPlPanelBody"
-      title={__("Cards Title", "b-blocks")}
-      initialOpen={false}
+        className="bPlPanelBody"
+        title={__("Card Title", "b-blocks")}
+        initialOpen={false}
       >
+        <ColorsControl
+          value={titleColor}
+          onChange={(value) => {
+            setAttributes({ titleColor: value });
+          }}
+        />
 
+        <Label>Text Alignment</Label>
+        <ButtonGroup>
+          <Button
+            isPrimary={titleAlign === "left"}
+            onClick={() => handleAlignment("left")}
+          >
+            Left
+          </Button>
+          <Button
+            isPrimary={titleAlign === "center"}
+            onClick={() => handleAlignment("center")}
+          >
+            Center
+          </Button>
+          <Button
+            isPrimary={titleAlign === "right"}
+            onClick={() => handleAlignment("right")}
+          >
+            Right
+          </Button>
+        </ButtonGroup>
 
-
-                <ColorsControl value={titleColor} onChange={(value)=>{
-                
-                 setAttributes({titleColor:value})
-               }}/>
-
-               <Label>Text Alignment</Label>
-<ButtonGroup>
-	<Button isPrimary={titleAlign==="left"}   onClick={()=>handleAlignment('left')}>Left</Button>
-	<Button isPrimary={titleAlign==="center"}     onClick={()=>handleAlignment('center')}>Center</Button>
-	<Button isPrimary={titleAlign==="right"}    onClick={()=>handleAlignment('right')}>Right</Button>
-</ButtonGroup>
-
-         <Typography
-           value={titleTypo}
-          onChange={(value)=>setAttributes({titleTypo:value})}/>
+        <Typography
+          value={titleTypo}
+          onChange={(value) => setAttributes({ titleTypo: value })}
+        />
       </PanelBody>
 
       <PanelBody
-      className="bPlPanelBody"
-      title={__("Cards Price", "b-blocks")}
-      initialOpen={false}
+        className="bPlPanelBody"
+        title={__("Card Price", "b-blocks")}
+        initialOpen={false}
       >
+        <ColorsControl
+          value={priceColor}
+          onChange={(value) => {
+            setAttributes({ priceColor: value });
+          }}
+        />
 
+        <Label>Text Alignment</Label>
+        <ButtonGroup>
+          <Button
+            isPrimary={priceAlign === "left"}
+            onClick={() => handleAlignmentp("left")}
+          >
+            Left
+          </Button>
+          <Button
+            isPrimary={priceAlign === "center"}
+            onClick={() => handleAlignmentp("center")}
+          >
+            Center
+          </Button>
+          <Button
+            isPrimary={priceAlign === "right"}
+            onClick={() => handleAlignmentp("right")}
+          >
+            Right
+          </Button>
+        </ButtonGroup>
 
-
-                <ColorsControl value={priceColor} onChange={(value)=>{
-                
-                 setAttributes({priceColor:value})
-               }}/>
-
-               <Label>Text Alignment</Label>
-<ButtonGroup>
-	<Button isPrimary={priceAlign==="left"}   onClick={()=>handleAlignmentp('left')}>Left</Button>
-	<Button isPrimary={priceAlign==="center"}     onClick={()=>handleAlignmentp('center')}>Center</Button>
-	<Button isPrimary={priceAlign==="right"}    onClick={()=>handleAlignmentp('right')}>Right</Button>
-</ButtonGroup>
-
-         <Typography
-           value={priceTypo}
-          onChange={(value)=>setAttributes({priceTypo:value})}/>
+        <Typography
+          value={priceTypo}
+          onChange={(value) => setAttributes({ priceTypo: value })}
+        />
       </PanelBody>
 
-
-
       <PanelBody
-      className="bPlPanelBody"
-      title={__("Cards Features", "b-blocks")}
-      initialOpen={false}
+        className="bPlPanelBody"
+        title={__("Card Features", "b-blocks")}
+        initialOpen={false}
       >
+        <ColorsControl
+          value={featuresColor}
+          onChange={(value) => {
+            setAttributes({ featuresColor: value });
+          }}
+        />
 
+        <Typography
+          value={featureTypo}
+          onChange={(value) => setAttributes({ featureTypo: value })}
+        />
 
-
-                <ColorsControl value={featuresColor} onChange={(value)=>{
-                
-                 setAttributes({featuresColor:value})
-               }}/>
-
-            
-
-         <Typography
-           value={featureTypo}
-          onChange={(value)=>setAttributes({featureTypo:value})}/>
-
-          <ColorControl
+        <ColorControl
           label="Icon Color"
-          value={iconColor} onChange={(value)=>{
-            setAttributes({iconColor:value})
-          }} />
+          value={iconColor}
+          onChange={(value) => {
+            setAttributes({ iconColor: value });
+          }}
+        />
 
-          <UnitControl
+        <UnitControl
           label="Icon Size"
           value={iconSize}
-          onChange={(value)=>{
-            setAttributes({iconSize:value})
-          }} />
-          
+          onChange={(value) => {
+            setAttributes({ iconSize: value });
+          }}
+        />
 
+        <IconLibrary
+          value={icon}
+          onChange={(value) => {
+            setAttributes({ icon: value });
+          }}
+        />
       </PanelBody>
 
-
-
       <PanelBody
-      className="bPlPanelBody"
-      title={__("Cards Button", "b-blocks")}
-      initialOpen={false}
+        className="bPlPanelBody"
+        title={__("Card Button", "b-blocks")}
+        initialOpen={false}
       >
+        <ColorsControl
+          value={buttonColor}
+          onChange={(value) => {
+            setAttributes({ buttonColor: value });
+          }}
+        />
 
-       
+        <Typography
+          value={ButtonTypo}
+          onChange={(value) => setAttributes({ ButtonTypo: value })}
+        />
 
-
-                <ColorsControl value={buttonColor} onChange={(value)=>{
-                
-                 setAttributes({buttonColor:value})
-               }}/>
-
-            
-
-         <Typography
-           value={ButtonTypo}
-          onChange={(value)=>setAttributes({ButtonTypo:value})}/>
-
-          <BoxControl
+        <BoxControl
           label="paddings"
-           values={buttonPadding} onChange={(value)=>{
-            setAttributes({buttonPadding:value});
-          }} />
+          values={buttonPadding}
+          onChange={(value) => {
+            setAttributes({ buttonPadding: value });
+          }}
+        />
 
-          <BoxControl
+        <BoxControl
           label="Border Radius"
-           values={buttonRadius} onChange={(value)=>{
-            setAttributes({buttonRadius:value});
-          }} />
-
+          values={buttonRadius}
+          onChange={(value) => {
+            setAttributes({ buttonRadius: value });
+          }}
+        />
       </PanelBody>
     </>
   );

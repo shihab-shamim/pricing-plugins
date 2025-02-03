@@ -425,14 +425,14 @@ const Cards = ({
   setAttributes,
   attributes
 }) => {
+  const {
+    icon
+  } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fatherofcards"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "snip1404"
   }, cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    // style={{ borderRadius:"100px",
-    //   border:"1px solid red"}}
-
     key: index,
     className: "plan"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -518,9 +518,7 @@ const Cards = ({
       gap: "5px",
       width: "100%"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-    className: "ion-checkmark"
-  }), " ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, icon, " ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: i,
     style: {
       display: "flex",
@@ -528,8 +526,11 @@ const Cards = ({
       gap: "5px",
       width: "100%"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-    className: "ion-checkmark"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "icons",
+    dangerouslySetInnerHTML: {
+      __html: `${icon}`
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     className: "feature",
     tagName: "span",
@@ -554,7 +555,11 @@ const Cards = ({
     }
   }, card?.buttonText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "plan-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, isShow && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: `${card?.link}`,
+    target: "_fhfghfgh",
+    className: "select-plan"
+  }, card?.buttonText), isShow || (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "select-plan"
   }, card?.buttonText))))))));
 };
@@ -622,16 +627,17 @@ const Style = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', titleTypo)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", titleTypo)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", priceTypo)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", featureTypo)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", ButtonTypo)?.googleFontLink}
+		
        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(planTitlt, titleTypo)?.styles}
 
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', priceTypo)?.googleFontLink}
        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(planCost, priceTypo)?.styles}
 
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', featureTypo)?.googleFontLink}
        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(feature, featureTypo)?.styles}
 
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', ButtonTypo)?.googleFontLink}
        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(button, ButtonTypo)?.styles}
 		
 		${blockSl} p {
@@ -704,9 +710,11 @@ const Style = ({
 		
 		  
 		  }
-		${planFeatures} i{
-		color: ${iconColor};
+		${planFeatures} .icons{
+		fill: ${iconColor};
 		font-size: ${iconSize};
+		width:  ${iconSize};
+		height:  ${iconSize};
 		
 		}
 

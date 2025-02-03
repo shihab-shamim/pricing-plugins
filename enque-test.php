@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: enqueue test
+ * Plugin Name: price plan
  * Description: Short description of the plugin
  * Version: 1.0.0
  * Author: bPlugins

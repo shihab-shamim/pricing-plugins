@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-import { PanelBody, __experimentalInputControl as InputControl, __experimentalNumberControl as NumberControl, __experimentalUnitControl as UnitControl} from '@wordpress/components';
+import { PanelBody, __experimentalInputControl as InputControl, __experimentalNumberControl as NumberControl, __experimentalUnitControl as UnitControl, TextControl} from '@wordpress/components';
 import { purposeTypeOptions } from '../../../../utils/options';
 import { updateData } from '../../../../utils/functions';
 import { Flex } from '@wordpress/components';
@@ -150,16 +150,21 @@ Add Feature
         />
         <small>Button hidden when empty</small>
 
-
+        {card?.buttonText &&  <>
+       <Label>Button Link</Label>
+  <TextControl value={card?.link} onChange={(value)=>{
+    setAttributes({ cards: cards.map((card, i) => i === index? {...card, link: value } : card) });
+  }}></TextControl>
+       </>}
 
     <Flex style={{marginTop:"4px" ,width:"100%"}} justify='center' align='center'>
     <button
   type="button"
   title='Delete Card'
   style={{
-    backgroundColor: "#FF4D4D", // Professional red
+    backgroundColor: "#FF4D4D", 
     color: "#fff",
-    padding: "4px 8px",
+    padding: "8px 12px",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
@@ -174,16 +179,16 @@ Add Feature
     }
   }}
 >
-<svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="15px" width="15px" xmlns="http://www.w3.org/2000/svg"><path d="M292.7 840h438.6l24.2-512h-487z"></path><path d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-504-72h304v72H360v-72zm371.3 656H292.7l-24.2-512h487l-24.2 512z"></path></svg>
-Delete
+
+
+Delete Plan
 </button>
 <button
 title='Copy Card'
   type="button"
   style={{
-    backgroundColor: "#007BFF", // Professional blue
-    color: "#fff",
-    padding: "4px 8px",
+    backgroundColor: "#007BFF", 
+    padding: "8px 12px",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
@@ -195,12 +200,11 @@ title='Copy Card'
   onClick={() => {
     const newCards = [...cards];
     const newCard = { ...cards[index] };
-    newCards.splice(index + 1, 0, newCard); // Insert duplicate after original
+    newCards.splice(index + 1, 0, newCard); 
     setAttributes({ cards: newCards });
   }}
 >
-<svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" height="15px" width="15px" xmlns="http://www.w3.org/2000/svg"><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"></path></svg>
-Copy
+Duplicate plan
 </button>
     </Flex>
 
@@ -213,7 +217,7 @@ Copy
    <button
   type="button"
   style={{
-    backgroundColor: "#4CAF50", // Professional green
+    backgroundColor: "#4CAF50", 
     color: "#fff",
     padding: "10px 15px",
     border: "none",
@@ -280,7 +284,9 @@ onChange={(value)=>{
 }}
 	onUnitChange={ e => console.log("new unit") }
 	isUnitSelectTabbable
-	value={gaps} />
+	value={gaps} 
+  min={0}
+  />
 
 </PanelBody>
    

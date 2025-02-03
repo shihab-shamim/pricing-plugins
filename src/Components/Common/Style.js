@@ -1,34 +1,66 @@
-import { getColorsCSS,getTypoCSS,getBorderBoxCSS,getBackgroundCSS,getMultiShadowCSS} from '../../../../bpl-tools/utils/getCSS';
+import {
+  getColorsCSS,
+  getTypoCSS,
+  getBorderBoxCSS,
+  getBackgroundCSS,
+  getMultiShadowCSS,
+} from "../../../../bpl-tools/utils/getCSS";
 
-const Style = ({ attributes, id,device }) => {
-	const { colors,layout,gaps,CardsContainerStyle,titleColor,titleAlign,titleTypo,priceColor ,priceAlign,priceTypo,featuresColor,featureTypo,buttonColor,ButtonTypo,buttonPadding,buttonRadius,iconColor,iconSize,cardBorder,alignment,cardsFather,cardShadow,cardRadius} = attributes;
+const Style = ({ attributes, id, device }) => {
+  const {
+    colors,
+    layout,
+    gaps,
+    CardsContainerStyle,
+    titleColor,
+    titleAlign,
+    titleTypo,
+    priceColor,
+    priceAlign,
+    priceTypo,
+    featuresColor,
+    featureTypo,
+    buttonColor,
+    ButtonTypo,
+    buttonPadding,
+    buttonRadius,
+    iconColor,
+    iconSize,
+    cardBorder,
+    alignment,
+    cardsFather,
+    cardShadow,
+    cardRadius,
+  } = attributes;
 
-	const mainSl = `#${id}`;
-	const blockSl = `${mainSl} .bBlocksTestPurpose`;
-	const fatherofcards = `${mainSl} .fatherofcards`;
-	const container=`${fatherofcards} .snip1404`;
-	const plan=`${container} .plan`;
-	const planTitlt=`${container} .plan-title`;
-	const planCost=`${container} .plan-cost`;
-	const planFeatures=`${container} .plan-features`;
-	const feature=`${planFeatures} .feature`;
-	const selectPanel=`${container} .panelSelect`;
-	const selectPlan=`${selectPanel} .plan-select`
-	const button=`${selectPanel} .select-plan`;
-	
+  const mainSl = `#${id}`;
+  const blockSl = `${mainSl} .bBlocksTestPurpose`;
+  const fatherofcards = `${mainSl} .fatherofcards`;
+  const container = `${fatherofcards} .snip1404`;
+  const plan = `${container} .plan`;
+  const planTitlt = `${container} .plan-title`;
+  const planCost = `${container} .plan-cost`;
+  const planFeatures = `${container} .plan-features`;
+  const feature = `${planFeatures} .feature`;
+  const selectPanel = `${container} .panelSelect`;
+  const selectPlan = `${selectPanel} .plan-select`;
+  const button = `${selectPanel} .select-plan`;
 
-	return <style dangerouslySetInnerHTML={{
-		__html: `
-		${getTypoCSS('', titleTypo)?.googleFontLink}
+  return (
+    <style
+      dangerouslySetInnerHTML={{
+        __html: `
+		${getTypoCSS("", titleTypo)?.googleFontLink}
+		${getTypoCSS("", priceTypo)?.googleFontLink}
+		${getTypoCSS("", featureTypo)?.googleFontLink}
+		${getTypoCSS("", ButtonTypo)?.googleFontLink}
+		
        ${getTypoCSS(planTitlt, titleTypo)?.styles}
 
-		${getTypoCSS('', priceTypo)?.googleFontLink}
        ${getTypoCSS(planCost, priceTypo)?.styles}
 
-		${getTypoCSS('', featureTypo)?.googleFontLink}
        ${getTypoCSS(feature, featureTypo)?.styles}
 
-		${getTypoCSS('', ButtonTypo)?.googleFontLink}
        ${getTypoCSS(button, ButtonTypo)?.styles}
 		
 		${blockSl} p {
@@ -72,7 +104,9 @@ const Style = ({ attributes, id,device }) => {
 		  ${planTitlt}:after{
 		  border-style: solid;
          border-width: 40px 300px 0 0;
-          border-color: ${titleColor.bgType === "solid" ? titleColor.bg : titleColor.gradient} transparent transparent;
+          border-color: ${
+            titleColor.bgType === "solid" ? titleColor.bg : titleColor.gradient
+          } transparent transparent;
 		  
 		  }
 		  
@@ -92,7 +126,9 @@ const Style = ({ attributes, id,device }) => {
 		   }
 		  ${button}{
 		   ${getColorsCSS(buttonColor)}
-		 padding: ${buttonPadding?.top} ${buttonPadding?.right} ${buttonPadding?.bottom} ${buttonPadding?.left};
+		 padding: ${buttonPadding?.top} ${buttonPadding?.right} ${
+       buttonPadding?.bottom
+     } ${buttonPadding?.left};
 		border-top-left-radius:${buttonRadius?.top};
 		border-top-right-radius: ${buttonRadius?.right};
 		border-bottom-left-radius:${buttonRadius?.bottom};
@@ -101,9 +137,11 @@ const Style = ({ attributes, id,device }) => {
 		
 		  
 		  }
-		${planFeatures} i{
-		color: ${iconColor};
+		${planFeatures} .icons{
+		fill: ${iconColor};
 		font-size: ${iconSize};
+		width:  ${iconSize};
+		height:  ${iconSize};
 		
 		}
 
@@ -142,6 +180,9 @@ const Style = ({ attributes, id,device }) => {
 		  }
 			
 		  
-	`}} />;
-}
+	`,
+      }}
+    />
+  );
+};
 export default Style;
