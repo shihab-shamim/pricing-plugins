@@ -6,7 +6,7 @@ import {
   getMultiShadowCSS,
 } from "../../../../bpl-tools/utils/getCSS";
 
-const Style = ({ attributes, id, device }) => {
+const Style = ({ attributes, id }) => {
   const {
     colors,
     layout,
@@ -43,7 +43,6 @@ const Style = ({ attributes, id, device }) => {
   const planFeatures = `${container} .plan-features`;
   const feature = `${planFeatures} .feature`;
   const selectPanel = `${container} .panelSelect`;
-  const selectPlan = `${selectPanel} .plan-select`;
   const button = `${selectPanel} .select-plan`;
 
   return (

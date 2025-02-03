@@ -1,10 +1,9 @@
 import { __ } from '@wordpress/i18n';
 
 import { PanelBody, __experimentalInputControl as InputControl, __experimentalNumberControl as NumberControl, __experimentalUnitControl as UnitControl, TextControl, FormToggle} from '@wordpress/components';
-import { purposeTypeOptions } from '../../../../utils/options';
 import { updateData } from '../../../../utils/functions';
 import { Flex } from '@wordpress/components';
-import { BoxControl, Device, Label } from '../../../../../../bpl-tools/Components';
+import {  Device,Label } from '../../../../../../bpl-tools/Components';
 
 
 
@@ -294,7 +293,7 @@ Duplicate plan
 onChange={(value)=>{
   setAttributes({gaps:value})
 }}
-	onUnitChange={ e => console.log("new unit") }
+	onUnitChange={ () => console.log("new unit") }
 	isUnitSelectTabbable
 	value={gaps} 
   min={0}

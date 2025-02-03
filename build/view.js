@@ -589,8 +589,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const Style = ({
   attributes,
-  id,
-  device
+  id
 }) => {
   const {
     colors,
@@ -627,7 +626,6 @@ const Style = ({
   const planFeatures = `${container} .plan-features`;
   const feature = `${planFeatures} .feature`;
   const selectPanel = `${container} .panelSelect`;
-  const selectPlan = `${selectPanel} .plan-select`;
   const button = `${selectPanel} .select-plan`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {

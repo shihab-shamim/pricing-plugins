@@ -4,7 +4,7 @@ import {
   __experimentalUnitControl as UnitControl,
   __experimentalBorderBoxControl as BorderBoxControl,
 } from "@wordpress/components";
-import { Flex, ButtonGroup, Button } from "@wordpress/components";
+import { ButtonGroup, Button } from "@wordpress/components";
 import {
   Background,
   BoxControl,
