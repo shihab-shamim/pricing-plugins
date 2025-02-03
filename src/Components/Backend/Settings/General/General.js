@@ -14,10 +14,10 @@ const General = ({ attributes, setAttributes,device }) => {
  
   return (
    <>
-    <PanelBody className='bPlPanelBody' title={__('Cards', 'b-blocks')} initialOpen={false}>
+    <PanelBody className='bPlPanelBody' title={__('Plans', 'b-blocks')} initialOpen={false}>
 
     {
-      cards.map((card,index)=><PanelBody key={index} className='bPlPanelBody' title={__(`Card(${card?.title})`, 'b-blocks')} initialOpen={false}>
+      cards.map((card,index)=><PanelBody key={index} className='bPlPanelBody' title={__(`Plan(${card?.title})`, 'b-blocks')} initialOpen={false}>
 
 <InputControl
 	label={`Title (${card?.title})`}
@@ -113,7 +113,7 @@ label={`Price (${card?.title})`}
 style={{
   backgroundColor: '#4CAF50', 
   color: 'white',  
-  padding: '10px 20px',  
+  padding: '8px 12px',  
   border: 'none',  
   borderRadius: '5px',  
   fontSize: '14px',  
@@ -157,6 +157,7 @@ Add Feature
   }}></TextControl>
        </>}
 
+<Label>Plan:</Label>
     <Flex style={{marginTop:"4px" ,width:"100%"}} justify='center' align='center'>
     <button
   type="button"
@@ -196,6 +197,7 @@ title='Copy Card'
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center', 
+    color: "white",
   }}
   onClick={() => {
     const newCards = [...cards];
@@ -219,7 +221,7 @@ Duplicate plan
   style={{
     backgroundColor: "#4CAF50", 
     color: "#fff",
-    padding: "10px 15px",
+    padding: "8px 12px",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
@@ -247,14 +249,14 @@ Duplicate plan
     });
   }}
 >
-<svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="10px" width="15px" xmlns="http://www.w3.org/2000/svg"><path d="M12,2C6.486,2,2,5.589,2,10c0,2.908,1.898,5.515,5,6.934V22l5.34-4.005C17.697,17.852,22,14.32,22,10 C22,5.589,17.514,2,12,2z M12,16h-0.333L9,18v-2.417l-0.641-0.247C5.67,14.301,4,12.256,4,10c0-3.309,3.589-6,8-6s8,2.691,8,6 S16.411,16,12,16z"></path><path d="M13 6L11 6 11 9 8 9 8 11 11 11 11 14 13 14 13 11 16 11 16 9 13 9z"></path></svg> Add Card
+ Add Plan
 </button>
 
 
 
 
       </PanelBody>
-      <PanelBody className='bPlPanelBody' title={__('Cards Layouts', 'b-blocks')} initialOpen={false}>
+      <PanelBody className='bPlPanelBody' title={__('Plans Layouts', 'b-blocks')} initialOpen={false}>
 
 
 <Flex justify='space-between' alignItems='center'>

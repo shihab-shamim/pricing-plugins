@@ -51,7 +51,7 @@ const Style = ({ attributes, setAttributes }) => {
     <>
       <PanelBody
         className="bPlPanelBody"
-        title={__("Cards Style", "b-blocks")}
+        title={__("Plan Wrapper", "b-blocks")}
         initialOpen={false}
       >
         <UnitControl
@@ -90,7 +90,7 @@ const Style = ({ attributes, setAttributes }) => {
         />
 
         <ShadowControl
-          label="Card Shadow"
+          label="Plan Shadow"
           value={cardShadow}
           onChange={(value) => {
             setAttributes({ cardShadow: value });
@@ -108,7 +108,7 @@ const Style = ({ attributes, setAttributes }) => {
 
       <PanelBody
         className="bPlPanelBody"
-        title={__("Card Title", "b-blocks")}
+        title={__("Plan Title", "b-blocks")}
         initialOpen={false}
       >
         <ColorsControl
@@ -148,7 +148,7 @@ const Style = ({ attributes, setAttributes }) => {
 
       <PanelBody
         className="bPlPanelBody"
-        title={__("Card Price", "b-blocks")}
+        title={__("Plan Price", "b-blocks")}
         initialOpen={false}
       >
         <ColorsControl
@@ -188,7 +188,7 @@ const Style = ({ attributes, setAttributes }) => {
 
       <PanelBody
         className="bPlPanelBody"
-        title={__("Card Features", "b-blocks")}
+        title={__("Plan Features", "b-blocks")}
         initialOpen={false}
       >
         <ColorsControl
@@ -229,7 +229,7 @@ const Style = ({ attributes, setAttributes }) => {
 
       <PanelBody
         className="bPlPanelBody"
-        title={__("Card Button", "b-blocks")}
+        title={__("Plan Button", "b-blocks")}
         initialOpen={false}
       >
         <ColorsControl

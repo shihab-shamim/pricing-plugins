@@ -2,7 +2,9 @@ import { RichText } from "@wordpress/block-editor";
 import { updateData } from "../../utils/functions";
 
 const Cards = ({ cards, isShow, setAttributes, attributes }) => {
-  const {icon}=attributes
+  const icon = attributes?.icon || "";
+
+  
   return (
     <div className="fatherofcards">
       <div className="snip1404">
@@ -122,7 +124,7 @@ const Cards = ({ cards, isShow, setAttributes, attributes }) => {
                           width: "100%",
                         }}
                       >
-                        {icon} {feature}
+                         <span dangerouslySetInnerHTML={{ __html: icon }}/>   {feature}
                       </li>
                     ))}
                   {isShow ||
@@ -136,7 +138,6 @@ const Cards = ({ cards, isShow, setAttributes, attributes }) => {
                           width: "100%",
                         }}
                       >
-                        {/* <i className="ion-checkmark"></i> */}
                         <div 
                         className="icons"
     dangerouslySetInnerHTML={{

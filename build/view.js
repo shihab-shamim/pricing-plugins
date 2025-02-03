@@ -425,9 +425,7 @@ const Cards = ({
   setAttributes,
   attributes
 }) => {
-  const {
-    icon
-  } = attributes;
+  const icon = attributes?.icon || "";
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fatherofcards"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -518,7 +516,11 @@ const Cards = ({
       gap: "5px",
       width: "100%"
     }
-  }, icon, " ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    dangerouslySetInnerHTML: {
+      __html: icon
+    }
+  }), "   ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: i,
     style: {
       display: "flex",
@@ -2205,7 +2207,8 @@ document.addEventListener('DOMContentLoaded', () => {
       id: blockNameEl.id
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_Cards__WEBPACK_IMPORTED_MODULE_4__["default"], {
       isShow: true,
-      cards: cards
+      cards: cards,
+      attributes: attributes
     })));
     blockNameEl?.removeAttribute('data-attributes');
   });

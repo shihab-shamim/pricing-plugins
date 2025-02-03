@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			<Style attributes={attributes} id={blockNameEl.id} />
 
 				
-		<Cards isShow={true} cards={cards}/>
+		<Cards isShow={true} cards={cards} attributes={attributes}/>
 
 		</>);
 
