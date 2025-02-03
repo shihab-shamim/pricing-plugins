@@ -4,15 +4,15 @@ import { updateData } from "../../utils/functions";
 const Cards = ({ cards, isShow, setAttributes, attributes }) => {
   const icon = attributes?.icon || "";
 
-  
   return (
     <div className="fatherofcards">
+     
       <div className="snip1404">
         {cards.map((card, index) => (
-          <div
-            key={index}
-            className="plan"
-          >
+          <div key={index} className="plan">
+          { card?.isPopular && <div className="popular">
+      popular
+     </div>}
             <div
               style={{
                 display: "flex",
@@ -124,7 +124,8 @@ const Cards = ({ cards, isShow, setAttributes, attributes }) => {
                           width: "100%",
                         }}
                       >
-                         <span dangerouslySetInnerHTML={{ __html: icon }}/>   {feature}
+                        <span className="icons" dangerouslySetInnerHTML={{ __html: icon }} />{" "}
+                        {feature}
                       </li>
                     ))}
                   {isShow ||
@@ -138,12 +139,12 @@ const Cards = ({ cards, isShow, setAttributes, attributes }) => {
                           width: "100%",
                         }}
                       >
-                        <div 
-                        className="icons"
-    dangerouslySetInnerHTML={{
-      __html: `${icon}`
-    }}
-  />
+                        <div
+                          className="icons"
+                          dangerouslySetInnerHTML={{
+                            __html: `${icon}`,
+                          }}
+                        />
                         <RichText
                           className="feature"
                           tagName="span"

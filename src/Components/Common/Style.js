@@ -144,6 +144,11 @@ const Style = ({ attributes, id, device }) => {
 		height:  ${iconSize};
 		
 		}
+		${planFeatures} .icons svg{
+		fill: ${iconColor};
+	
+		
+		}
 
 
 

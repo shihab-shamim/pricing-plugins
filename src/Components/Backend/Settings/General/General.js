@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-import { PanelBody, __experimentalInputControl as InputControl, __experimentalNumberControl as NumberControl, __experimentalUnitControl as UnitControl, TextControl} from '@wordpress/components';
+import { PanelBody, __experimentalInputControl as InputControl, __experimentalNumberControl as NumberControl, __experimentalUnitControl as UnitControl, TextControl, FormToggle} from '@wordpress/components';
 import { purposeTypeOptions } from '../../../../utils/options';
 import { updateData } from '../../../../utils/functions';
 import { Flex } from '@wordpress/components';
@@ -210,6 +210,19 @@ Duplicate plan
 </button>
     </Flex>
 
+
+<Label>Popular Plan  <FormToggle
+   
+   checked={ card?.isPopular }
+   onChange={ (value) => {
+    setAttributes({ cards: cards.map((card, i) => i === index? {...card, isPopular: !card?.isPopular } : card) });
+
+
+  // console.log(value.value)
+  
+  } }
+ /></Label>
+   
 
 
       </PanelBody>)

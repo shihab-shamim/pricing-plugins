@@ -433,7 +433,9 @@ const Cards = ({
   }, cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: index,
     className: "plan"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, card?.isPopular && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "popular"
+  }, "popular"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       display: "flex",
       flexDirection: "column",
@@ -517,10 +519,11 @@ const Cards = ({
       width: "100%"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "icons",
     dangerouslySetInnerHTML: {
       __html: icon
     }
-  }), "   ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), " ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: i,
     style: {
       display: "flex",
@@ -717,6 +720,11 @@ const Style = ({
 		font-size: ${iconSize};
 		width:  ${iconSize};
 		height:  ${iconSize};
+		
+		}
+		${planFeatures} .icons svg{
+		fill: ${iconColor};
+	
 		
 		}
 

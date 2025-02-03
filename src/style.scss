@@ -127,6 +127,24 @@ $primaryColor: #4527a4;
 .feature-item i,.feature {
 	padding: 8px 5%;
   }
+
+  // popularity
+  .fatherofcards{
+    position: relative;
+  }
+  .popular{
+    position: absolute;
+    top: 2px;
+    right: 11px;
+    padding: 5px 10px;
+    background-color: rgb(20 109 213 / 70%);
+    color: #f5f5f5;
+    font-size: 12px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1;
+    transition: all 0.3s ease;
+  }
 @media only screen and (max-width: 767px) {
   .snip1404 .plan {
     width: 50%;
