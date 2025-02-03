@@ -214,11 +214,8 @@ Duplicate plan
 <Label>Popular Plan  <FormToggle
    
    checked={ card?.isPopular }
-   onChange={ (value) => {
+   onChange={ () => {
     setAttributes({ cards: cards.map((card, i) => i === index? {...card, isPopular: !card?.isPopular } : card) });
-
-
-  // console.log(value.value)
   
   } }
  /></Label>
