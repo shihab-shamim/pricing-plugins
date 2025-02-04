@@ -59,6 +59,8 @@ label={`Price (${card?.title})`}
      {
    card?.features?.map((feature, i) => (
     <div key={index} className="feature-item">
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"5px"}}>
+
       <InputControl
         label={`Feature-${i + 1} (${card?.title})`}
         labelPosition="top"
@@ -78,15 +80,9 @@ label={`Price (${card?.title})`}
       <button
       title='Delete Feature'
       style={{
-        backgroundColor: '#dc3545',  
-        color: 'white', 
-        padding: '8px 16px',  
-        border: 'none',  
-        borderRadius: '5px',  
-        fontSize: '14px',  
-        cursor: 'pointer',  
-        transition: 'background-color 0.3s ease',  
-        marginTop: '4px', 
+        height:"30px",
+        marginTop: '25px', 
+        cursor:'pointer',
       }}
         type="button"
         onClick={() => {
@@ -102,8 +98,10 @@ label={`Price (${card?.title})`}
           });
         }}
       >
-      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M292.7 840h438.6l24.2-512h-487z"></path><path d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-504-72h304v72H360v-72zm371.3 656H292.7l-24.2-512h487l-24.2 512z"></path></svg>
+      <svg stroke="currentColor" fill="red" strokeWidth="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M292.7 840h438.6l24.2-512h-487z"></path><path d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-504-72h304v72H360v-72zm371.3 656H292.7l-24.2-512h487l-24.2 512z"></path></svg>
       </button>
+
+      </div>
     </div>
   ))
 }
@@ -112,7 +110,7 @@ label={`Price (${card?.title})`}
 style={{
   backgroundColor: '#4CAF50', 
   color: 'white',  
-  padding: '8px 12px',  
+  padding: '4px 6px',  
   border: 'none',  
   borderRadius: '5px',  
   fontSize: '14px',  
@@ -230,11 +228,12 @@ Duplicate plan
   style={{
     backgroundColor: "#4CAF50", 
     color: "#fff",
-    padding: "8px 12px",
+    padding: "4px 6px",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
     fontSize: "14px",
+    
   }}
   onClick={() => {
     setAttributes({
