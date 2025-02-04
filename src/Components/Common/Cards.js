@@ -1,8 +1,8 @@
 import { RichText } from "@wordpress/block-editor";
 import { updateData } from "../../utils/functions";
 
-const Cards = ({ cards, isShow, setAttributes, attributes }) => {
-  const icon = attributes?.icon || "";
+const Cards = ({ cards, isShow, setAttributes }) => {
+  // const icon = attributes?.icon || "";
 
   return (
     <div className="fatherofcards">
@@ -125,8 +125,8 @@ const Cards = ({ cards, isShow, setAttributes, attributes }) => {
                           width: "100%",
                         }}
                       >
-                        <span className="icons" dangerouslySetInnerHTML={{ __html: icon }} />{" "}
-                        {feature}
+                        <span className="icons" dangerouslySetInnerHTML={{ __html: feature?.icon || "" }} />{" "}
+                        {feature.title}
                       </li>
                     ))}
                   {isShow ||
@@ -143,23 +143,25 @@ const Cards = ({ cards, isShow, setAttributes, attributes }) => {
                         <div
                           className="icons"
                           dangerouslySetInnerHTML={{
-                            __html: `${icon}`,
+                            __html: `${feature?.icon || ""}`,
                           }}
                         />
                         <RichText
                           className="feature"
                           tagName="span"
-                          value={feature}
+                          value={feature?.title}
                           placeholder="feature..."
                           onChange={(value) => {
-                            const newCards = [...cards];
-                            newCards[index] = {
-                              ...newCards[index],
-                              features: newCards[index].features.map(
-                                (feature, featureIndex) =>
-                                  featureIndex === i ? value : feature
-                              ),
-                            };
+                            const newCards = cards.map((card, cardIndex) => 
+                              cardIndex === index 
+                                ? { 
+                                    ...card, 
+                                    features: card.features.map((feature, featureIndex) => 
+                                      featureIndex === i ? { ...feature, title: value } : feature
+                                    ) 
+                                  } 
+                                : card
+                            );
                             setAttributes({ cards: newCards });
                           }}
                         />

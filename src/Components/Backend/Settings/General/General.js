@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { PanelBody, __experimentalInputControl as InputControl, __experimentalNumberControl as NumberControl, __experimentalUnitControl as UnitControl, TextControl, FormToggle} from '@wordpress/components';
 import { updateData } from '../../../../utils/functions';
 import { Flex } from '@wordpress/components';
-import {  Device,Label } from '../../../../../../bpl-tools/Components';
+import {  Device,IconLibrary,Label } from '../../../../../../bpl-tools/Components';
 
 
 
@@ -64,18 +64,21 @@ label={`Price (${card?.title})`}
       <InputControl
         label={`Feature-${i + 1} (${card?.title})`}
         labelPosition="top"
-        value={feature}
+        value={feature?.title}
         placeholder='feature...'
         onChange={(value) => {
-          const newCards = [...cards];
-          newCards[index] = {
-              ...newCards[index], 
-              features: newCards[index].features.map((feature, featureIndex) => 
-                  featureIndex === i ? value : feature
-              )
-          };
+          const newCards = cards.map((card, cardIndex) => 
+            cardIndex === index 
+              ? { 
+                  ...card, 
+                  features: card.features.map((feature, featureIndex) => 
+                    featureIndex === i ? { ...feature, title: value } : feature
+                  ) 
+                } 
+              : card
+          );
           setAttributes({ cards: newCards });
-      }}
+        }}
       />
       <button
       title='Delete Feature'
@@ -100,6 +103,23 @@ label={`Price (${card?.title})`}
       >
       <svg stroke="currentColor" fill="red" strokeWidth="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M292.7 840h438.6l24.2-512h-487z"></path><path d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-504-72h304v72H360v-72zm371.3 656H292.7l-24.2-512h487l-24.2 512z"></path></svg>
       </button>
+      <IconLibrary
+        label=""
+          value={feature?.icon}
+          onChange={(value) => {
+            const newCards = cards.map((card, cardIndex) => 
+              cardIndex === index 
+                ? { 
+                    ...card, 
+                    features: card.features.map((feature, featureIndex) => 
+                      featureIndex === i ? { ...feature, icon: value } : feature
+                    ) 
+                  } 
+                : card
+            );
+            setAttributes({ cards: newCards });
+          }}
+        />
 
       </div>
     </div>

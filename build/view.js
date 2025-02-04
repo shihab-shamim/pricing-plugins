@@ -422,10 +422,10 @@ __webpack_require__.r(__webpack_exports__);
 const Cards = ({
   cards,
   isShow,
-  setAttributes,
-  attributes
+  setAttributes
 }) => {
-  const icon = attributes?.icon || "";
+  // const icon = attributes?.icon || "";
+
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fatherofcards"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -521,9 +521,9 @@ const Cards = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "icons",
     dangerouslySetInnerHTML: {
-      __html: icon
+      __html: feature?.icon || ""
     }
-  }), " ", feature)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), " ", feature.title)), isShow || card?.features?.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: i,
     style: {
       display: "flex",
@@ -534,19 +534,21 @@ const Cards = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "icons",
     dangerouslySetInnerHTML: {
-      __html: `${icon}`
+      __html: `${feature?.icon || ""}`
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     className: "feature",
     tagName: "span",
-    value: feature,
+    value: feature?.title,
     placeholder: "feature...",
     onChange: value => {
-      const newCards = [...cards];
-      newCards[index] = {
-        ...newCards[index],
-        features: newCards[index].features.map((feature, featureIndex) => featureIndex === i ? value : feature)
-      };
+      const newCards = cards.map((card, cardIndex) => cardIndex === index ? {
+        ...card,
+        features: card.features.map((feature, featureIndex) => featureIndex === i ? {
+          ...feature,
+          title: value
+        } : feature)
+      } : card);
       setAttributes({
         cards: newCards
       });
