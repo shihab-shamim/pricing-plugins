@@ -216,7 +216,14 @@ Duplicate plan
   
   } }
  /></Label>
-   
+
+{card?.isPopular && <>
+  <Label>Tag</Label>
+  <TextControl value={card?.tag} onChange={(value)=>{
+    setAttributes({ cards: cards.map((card, i) => i === index? {...card, tag: value } : card) });
+  }}></TextControl>
+</>
+   }
 
 
       </PanelBody>)

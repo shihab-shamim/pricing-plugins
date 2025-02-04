@@ -435,7 +435,7 @@ const Cards = ({
     className: "plan"
   }, card?.isPopular && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "popular"
-  }, "popular"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, card.tag), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       display: "flex",
       flexDirection: "column",
@@ -614,7 +614,11 @@ const Style = ({
     alignment,
     cardsFather,
     cardShadow,
-    cardRadius
+    cardRadius,
+    tagColor,
+    tagPadding,
+    tagSize,
+    tagTypo
   } = attributes;
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .bBlocksTestPurpose`;
@@ -627,6 +631,7 @@ const Style = ({
   const feature = `${planFeatures} .feature`;
   const selectPanel = `${container} .panelSelect`;
   const button = `${selectPanel} .select-plan`;
+  const popular = `${fatherofcards} .popular`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -634,6 +639,7 @@ const Style = ({
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", priceTypo)?.googleFontLink}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", featureTypo)?.googleFontLink}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", ButtonTypo)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", popular)?.googleFontLink}
 		
        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(planTitlt, titleTypo)?.styles}
 
@@ -642,6 +648,7 @@ const Style = ({
        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(feature, featureTypo)?.styles}
 
        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(button, ButtonTypo)?.styles}
+       ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(popular, tagTypo)?.styles}
 		
 		${blockSl} p {
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(colors)}
@@ -723,6 +730,16 @@ const Style = ({
 		${planFeatures} .icons svg{
 		fill: ${iconColor};
 	
+		
+		}
+		${popular}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(tagColor)}
+			 padding: ${tagPadding?.top} ${tagPadding?.right} ${tagPadding?.bottom} ${tagPadding?.left};
+	    border-top-left-radius:${tagSize?.top};
+		border-top-right-radius: ${tagSize?.right};
+		border-bottom-left-radius:${tagSize?.bottom};
+		border-bottom-right-radius: ${tagSize?.left};
+		
 		
 		}
 

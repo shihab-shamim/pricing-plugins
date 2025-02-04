@@ -10,9 +10,10 @@ const Cards = ({ cards, isShow, setAttributes, attributes }) => {
       <div className="snip1404">
         {cards.map((card, index) => (
           <div key={index} className="plan">
-          { card?.isPopular && <div className="popular">
-      popular
+          { card?.isPopular  && <div className="popular">
+      {card.tag}
      </div>}
+         
             <div
               style={{
                 display: "flex",

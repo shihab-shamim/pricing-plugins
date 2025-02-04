@@ -31,6 +31,10 @@ const Style = ({ attributes, id }) => {
     cardsFather,
     cardShadow,
     cardRadius,
+	tagColor,
+	tagPadding,
+	tagSize,
+	tagTypo
   } = attributes;
 
   const mainSl = `#${id}`;
@@ -44,6 +48,7 @@ const Style = ({ attributes, id }) => {
   const feature = `${planFeatures} .feature`;
   const selectPanel = `${container} .panelSelect`;
   const button = `${selectPanel} .select-plan`;
+  const popular = `${fatherofcards} .popular`;
 
   return (
     <style
@@ -53,6 +58,7 @@ const Style = ({ attributes, id }) => {
 		${getTypoCSS("", priceTypo)?.googleFontLink}
 		${getTypoCSS("", featureTypo)?.googleFontLink}
 		${getTypoCSS("", ButtonTypo)?.googleFontLink}
+		${getTypoCSS("", popular)?.googleFontLink}
 		
        ${getTypoCSS(planTitlt, titleTypo)?.styles}
 
@@ -61,6 +67,7 @@ const Style = ({ attributes, id }) => {
        ${getTypoCSS(feature, featureTypo)?.styles}
 
        ${getTypoCSS(button, ButtonTypo)?.styles}
+       ${getTypoCSS(popular, tagTypo)?.styles}
 		
 		${blockSl} p {
 			${getColorsCSS(colors)}
@@ -146,6 +153,18 @@ const Style = ({ attributes, id }) => {
 		${planFeatures} .icons svg{
 		fill: ${iconColor};
 	
+		
+		}
+		${popular}{
+			${getColorsCSS(tagColor)}
+			 padding: ${tagPadding?.top} ${tagPadding?.right} ${
+       tagPadding?.bottom
+     } ${tagPadding?.left};
+	    border-top-left-radius:${tagSize?.top};
+		border-top-right-radius: ${tagSize?.right};
+		border-bottom-left-radius:${tagSize?.bottom};
+		border-bottom-right-radius: ${tagSize?.left};
+		
 		
 		}
 

@@ -38,6 +38,10 @@ const Style = ({ attributes, setAttributes }) => {
     cardShadow,
     cardRadius,
     icon,
+    tagColor,
+    tagPadding,
+    tagSize,
+    tagTypo
   } = attributes;
   console.log(icon);
   const handleAlignment = (value) => {
@@ -259,6 +263,42 @@ const Style = ({ attributes, setAttributes }) => {
             setAttributes({ buttonRadius: value });
           }}
         />
+      </PanelBody>
+      <PanelBody
+      className="bPlPanelBody"
+      title={__("Plan Tag", "b-blocks")}
+      initialOpen={false}
+      >
+
+     <ColorsControl
+     label={__("Plan Tag", "b-blocks")}
+          value={tagColor}
+          onChange={(value) => {
+            setAttributes({ tagColor: value });
+          }}
+        />
+
+      <Typography
+          value={tagTypo}
+          onChange={(value) => setAttributes({ tagTypo: value })}
+        />
+        <BoxControl
+          label="paddings"
+          values={tagPadding}
+          onChange={(value) => {
+            setAttributes({ tagPadding: value });
+          }}
+        />
+
+        <BoxControl
+          label="Border Radius"
+          values={tagSize}
+          onChange={(value) => {
+            setAttributes({ tagSize: value });
+          }}
+        />
+
+
       </PanelBody>
     </>
   );
